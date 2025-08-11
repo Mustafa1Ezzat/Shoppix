@@ -4,7 +4,7 @@ let express = require('express')
 let mongoose = require('mongoose')
 let cors = require('cors')
 let server = express()
-let port = 8000
+let PORT = process.env.PORT || 3000;
 
 
 // Routers
@@ -21,6 +21,6 @@ mongoose.connect(process.env.MONGO_DB).then(()=> console.log('Connected to Mongo
 
     server.use('/Registers', RegisterRouter)
 
-server.listen(port, ()=>{
+server.listen(PORT, ()=>{
         console.log(`Server is running on http://localhost:${port}`)
 })
