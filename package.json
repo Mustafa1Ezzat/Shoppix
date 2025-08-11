@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "nodemon": "nodemon src/index.js",
-    "start" : "node src/index.js"
+    "start": "node src/index.js"
   },
   "author": "Mustafa Ezzat",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.18.0",
     "mongoose": "^8.16.5",
     "nodemon": "^3.1.10"
   }
