@@ -64,7 +64,7 @@ RegisterRouter.post('/CheckAndGenerateToken', async(req, res)=>{
             res.status(201).send(token)
 
     } catch (error) {
-        res.status(500).send('Login failed. Please check your email and password.')
+        res.status(500).send('Login failed. Please check your email and password.', error)
     }
 })
 
