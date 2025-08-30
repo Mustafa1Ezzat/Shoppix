@@ -60,7 +60,7 @@ RegisterRouter.post('/CheckAndGenerateToken', async(req, res)=>{
                             "password" : FindUser.password
                         }
 
-            let token = JWT.sign(Payload, process.env.SECRET_KEY, {expiresIn: "72h"})
+            let token = JWT.sign(Payload, "yxPmc3EPxaJv9rrXNboSgcuUyKoIVOT1", {expiresIn: "72h"})
             res.status(201).send(token)
 
     } catch (error) {
@@ -109,7 +109,7 @@ async(req, res, next)=>{
         if(!TOKEN) return res.status(401).send('token is not provided!')
 
             
-            JWT.verify(TOKEN, process.env.SECRET_KEY, async(err, payload)=>{
+            JWT.verify(TOKEN, "yxPmc3EPxaJv9rrXNboSgcuUyKoIVOT1", async(err, payload)=>{
                 if(err) return res.status(500).send('invalid token')
 
                     let User = await userdata.findOne({email : payload.email})

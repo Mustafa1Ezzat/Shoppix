@@ -16,7 +16,7 @@ server.use(cors())
 server.use(express.json())
 
 
-mongoose.connect(process.env.MONGO_DB).then(()=> console.log('Connected to MongoDB successfully!'))
+mongoose.connect("mongodb+srv://mustafa1ezzat:6h0O72XE6pJRY3FY@shoppix.xcwfxsm.mongodb.net/?retryWrites=true&w=majority&appName=Shoppix").then(()=> console.log('Connected to MongoDB successfully!'))
 .catch(err => console.log('Failed to connect to MongoDB:', err))
 
     server.use('/Registers', RegisterRouter)
