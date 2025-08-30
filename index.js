@@ -21,6 +21,9 @@ mongoose.connect(process.env.MONGO_DB).then(()=> console.log('Connected to Mongo
 
     server.use('/Registers', RegisterRouter)
 
-server.listen(PORT, ()=>{
-        console.log(`Server is running on http://localhost:${PORT}`)
-})
+
+    module.exports = server
+
+// server.listen(PORT, ()=>{
+//         console.log(`Server is running on http://localhost:${PORT}`)
+// })
