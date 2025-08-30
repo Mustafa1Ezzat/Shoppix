@@ -1,4 +1,4 @@
-require('dotenv').config()
+// require('dotenv').config()
 
 let express = require('express')
 let mongoose = require('mongoose')
@@ -21,6 +21,9 @@ mongoose.connect("mongodb+srv://mustafa1ezzat:6h0O72XE6pJRY3FY@shoppix.xcwfxsm.m
 
     server.use('/Registers', RegisterRouter)
 
+    server.get('/', (req, res) => {
+    res.send('API is running')
+    })
 
     module.exports = server
 
