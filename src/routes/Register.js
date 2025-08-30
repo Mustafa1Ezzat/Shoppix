@@ -100,16 +100,16 @@ RegisterRouter.post('/CheckAndGenerateToken', async(req, res)=>{
 
 
 
-RegisterRouter.get('/LogIn', 
+RegisterRouter.post('/LogIn', 
     
     
     
 async(req, res, next)=>{
-        let token = req.get('Authorization')
-        if(!token) return res.status(401).send('token is not provided!')
+        let TOKEN = req.body.token;
+        if(!TOKEN) return res.status(401).send('token is not provided!')
 
             
-            JWT.verify(token, process.env.SECRET_KEY, async(err, payload)=>{
+            JWT.verify(TOKEN, process.env.SECRET_KEY, async(err, payload)=>{
                 if(err) return res.status(500).send('invalid token')
 
                     let User = await userdata.findOne({email : payload.email})
