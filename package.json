@@ -6,6 +6,11 @@
     "nodemon": "nodemon src/index.js",
     "start": "node index.js"
   },
+  "engines": {
+    "node": "18.x"
+  }
+  
+  ,
   "author": "Mustafa Ezzat",
   "license": "ISC",
   "description": "",
