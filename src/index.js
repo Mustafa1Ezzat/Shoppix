@@ -8,7 +8,7 @@ let PORT = process.env.PORT || 3000;
 
 
 // Routers
-let RegisterRouter = require('./src/routes/Register')
+let RegisterRouter = require('./routes/Register')
 
 
 // middleware
