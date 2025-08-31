@@ -1,4 +1,4 @@
-// require('dotenv').config()
+require('dotenv').config()
 
 let express = require('express')
 let mongoose = require('mongoose')
@@ -16,7 +16,7 @@ server.use(cors())
 server.use(express.json())
 
 
-mongoose.connect("mongodb://localhost:27017/").then(()=> console.log('Connected to MongoDB successfully!'))
+mongoose.connect(process.env.MONGO_DB).then(()=> console.log('Connected to MongoDB successfully!'))
 .catch(err => console.log('Failed to connect to MongoDB:', err))
 
     server.use('/Registers', RegisterRouter)
@@ -29,5 +29,3 @@ mongoose.connect("mongodb://localhost:27017/").then(()=> console.log('Connected 
     server.listen(PORT, ()=>{
         console.log(`Server is running on http://localhost:${PORT}`)
     })
-    
-    module.exports = server
