@@ -25,8 +25,9 @@ mongoose.connect("mongodb://localhost:27017/").then(()=> console.log('Connected 
     res.send('API is running')
     })
 
+    
+    server.listen(PORT, ()=>{
+        console.log(`Server is running on http://localhost:${PORT}`)
+    })
+    
     module.exports = server
-
-// server.listen(PORT, ()=>{
-//         console.log(`Server is running on http://localhost:${PORT}`)
-// })
