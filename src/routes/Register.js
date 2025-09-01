@@ -85,8 +85,24 @@ RegisterRouter.post('/CheckAndGenerateToken', async(req, res)=>{
 
 
 
+RegisterRouter.post('/send', async (req, res) => {
+  try {
+    const userId = "68b5c22ec909a67345b23847";
+    const user = await userdata.findById(userId);
 
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
 
+    user.data.push(req.body);
+    await user.save();
+
+    res.status(200).json(user);
+  } catch (error) {
+    console.error("Error saving user data:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
 
 
 
@@ -117,6 +133,9 @@ async(req, res, next)=>{
                     next();
             })
 }, 
+
+
+
 
 
 
