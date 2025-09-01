@@ -7,7 +7,8 @@ let mongoose = require('mongoose')
         email : String,
         age : String,
         mobile : Number,
-        password : String
+        password : String,
+        data: Array
     })
 
 
